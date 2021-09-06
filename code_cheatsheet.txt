@@ -1,0 +1,37 @@
+# ssh into Jetson Nano
+ssh jane@192.168.1.180
+
+# find Jetson Nano IP address
+ifconfig eth0
+
+# provision an instance with spot pricing
+aws ec2 run-instances --image-id ami-0010d386b82bc06f0 --instance-type t2.micro --security-group-ids sg-064cbb402c9f4c508 --associate-public-ip-address --instance-market-options file://spot-options.json --key-name w251 --profile mids
+
+# terminate an instance
+aws ec2 terminate-instances --instance-ids i-0e890df67afda4021 --profile mids
+
+# find running instances
+aws ec2 describe-instances \
+    --filters Name=instance-state-name,Values=running \
+    --profile mids | grep InstanceId
+
+# screen dimensions in Jetson VM
+sudo xrandr --fb 1600x900
+
+# Docker Commands
+docker ps	# Lists all running containers
+docker ps -a	# Lists all containers
+docker pull 	# Pull an image from a registry
+docker images	# Lista all local images
+docker run	# Run an image as a container
+docker run --name	# Run an image as a container, using the specified name for the container.
+docker run --rm	# Run an image as a conatiner and automatically delete it when it exits.
+docker network create	# Create a user defined network
+docker network ls	# List networks
+docker network rm	# Delete a network
+docker run -it ...	# Enable the abiliy to interact with a container via stdin and stdout
+docker run --hostname ...	# Set the hostname of the container
+docker run --network ...	# Set the container's network
+docker inspect	# Return low-level information on Docker objects
+docker rm	# Delete a container
+docker rmi image name	# Delete an image from the local cache
