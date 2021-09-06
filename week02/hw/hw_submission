@@ -1,0 +1,32 @@
+1. How can Sagemaker help Data Scientists?
+Sagemaker helps Data Scientists by enabling them to quickly and easily build ML machines and then deploy into a production-ready hosted environment.
+
+2. Advantages/Disadvantages of Sagemaker?
+Advantages:
+- not have to manage servers because there is an integrated Jupyter instance
+- all the training, testing, and models are stored in S3, so it is easy to access
+- cloud-based so only charged for what you use
+- many supported libraries and deep learning AMI (configured tempaltes with DL frameworks)
+Disadvantages:
+- too complex for those without a strong programming background (many data scientists, new hires)
+- have to depend on AWS for new package releases
+
+3. Integration of Sagemaker with other AWS services such as Lambda functions, Kubernetes etc.,
+Sagemaker pipelines integrates with Lambda functions through LambdaStep, which allows customers to directly invoke a Lambda function in the ML pipeline as long as processing can be completed within 10 minutes.
+
+Kubernetes workflows can be integrated into Amazon Sagemaker through Amazon SageMaker Operators for Kubernetes. These operators reduce the effort needed to write custom code to optimize the underlying ML Infrastructure, provide high availability and reliability, security, etc.
+
+4. When to use what algorithms
+Regression algorithms are used when you have a continuous target variable, and classification algorithms are used when you have a categorical target variable.
+
+5. What are other ML services available from other cloud service providers such as Google, Microsoft, IBM?
+Google Cloud
+- Document AI: document processing (i.e. classify, extract, and enrich scanned and digital documents)
+- Cloud AutoML
+- Google Colab (execute Python code with access into GPUs)
+Microsoft Azure
+- Azure Cognitive Search: AI cloud search for mobile and web app development
+- Machine Learning with Azure Databricks and ONNX
+- Bot Service for enterprise that abstracts all the details and just consume
+IBM Watson
+- Watson NLP, speech-to-text, text-to-speech, Knowledge Studio, language translator, and natural language classifier
