@@ -561,14 +561,23 @@ Let us test and double theck that the service is working. We previously installe
 ```
 mosquitto_sub -h localost -p <service port> -t my_topic
 ```
-and submit a message to this topic:
+In my case, `mosquitto_sub -h localhost -p 1883 -t my_topic`, this hangs and waits for a message. `_sub` is for the subscriber, who is waiting for a message.
+
+
+In another terminal window, submit a message to this topic:
 ```
 mosquitto_pub -h localhost -p <service port> -t my_topic -m "hello mqtt"
 ```
+`_pub` is for the publisher, who records and sends out messages.
+
 You should see the message delivered to the listener.  Now you can Control-C out of the listener.
 
 
-To use the service programmatically, you'll create 2 simple python applications. This can be done using your Jetson device or your local workstation (your choice), but this will assume that you are using your Jetson.  You may want to setup a python virtual env (e.g. python3 -m venv /path/to/new/virtual/environment) for this, but the choice is yours.  To install the MQTT client libraries, run the following, `pip3 install paho-mqtt`.
+To use the service programmatically, you'll create 2 simple python applications. This can be done using your Jetson device or your local workstation (your choice), but this will assume that you are using your Jetson.  You may want to setup a python virtual env (e.g. python3 -m venv /path/to/new/virtual/environment) for this, but the choice is yours.
+
+To create a virtual environment, run `python3 -m venv ./venv` within the project folder. Activate the virtual environment by using `source ./venv/bin/activate`. To deactivate,  run `deactivate`.
+
+To install the MQTT client libraries, run the following, `pip3 install paho-mqtt`.
 
 To create a listener, use the following code in a file named listener.py:
 ```

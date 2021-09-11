@@ -35,3 +35,8 @@ docker run --network ...	# Set the container's network
 docker inspect	# Return low-level information on Docker objects
 docker rm	# Delete a container
 docker rmi image name	# Delete an image from the local cache
+
+kubectl apply -f <deployment or service>.yaml
+kubectl get pods -l app=<app name>
+# get the NodePort from kubernetes
+kubectl get service <name of service>
