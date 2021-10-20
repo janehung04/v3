@@ -2,7 +2,7 @@
 
 This homework is meant to provide a taste of what it's like to create a small domain - specific dataset and use publicly available assets to create a custom models.
 
-Ata high level, the assignment is to annotate some data from the [Tesla cam](https://w251lab08.s3.us-west-1.amazonaws.com/videos.tar) and train a custom object detector on it, proving that you can overfit on it -- e.g. similarly to the coco128 dataset, you can train and validate on the same dataset, making sure that your mAP@.5 is modest, over 0.05 (5%)
+At a high level, the assignment is to annotate some data from the [Tesla cam](https://w251lab08.s3.us-west-1.amazonaws.com/videos.tar) and train a custom object detector on it, proving that you can overfit on it -- e.g. similarly to the coco128 dataset, you can train and validate on the same dataset, making sure that your mAP@.5 is modest, over 0.05 (5%)
 
 Notes:
 * Peruse [Yolo v5 best practices](https://docs.ultralytics.com/tutorials/training-tips-best-results/)

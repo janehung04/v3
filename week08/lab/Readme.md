@@ -106,4 +106,6 @@ The landscape of image annotators continues to suffer from fragmentation, with s
 
 Questions:
 * How long does it take you to annotate 10-20 images?
+    > Too long
 * How long would it take to annotate enough images for a reasonable training of Yolo v5?
+    > Forever
