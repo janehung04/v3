@@ -11,6 +11,11 @@ You will need to download the CINIC dataset. The instructors will distribute a l
 
 Lab 4 will be done in teams using instructor-provided VMs. For lab 5, you will need a pair of VMs. That lab could be done in groups or individually. You will need the ability to provision 16 vCPUs (two VMs, 8 cVPUs each).
 
+Notes:  
+Please start by provisioning your VM(s) at the start of class; a couple of g4dn VMs, smallest available, NVIDIA AMI, 400GB / volume).  Be sure to validate your credits.  We'll be starting with Lab 5.
+
+In addition, the link to the dataset is: https://w251hw05.s3.us-west-1.amazonaws.com/cinic.zip.  This can be downloaded using wget, e.g. wget https://w251hw05.s3.us-west-1.amazonaws.com/cinic.zip.
+
 ### Lab 1. Automatic Mixed Precision (AMP)
 In this lab, we will start with a previously discussed [CINIC example](cinic.ipynb). You will need to add the [Torch AMP](https://pytorch.org/docs/stable/amp.html) to the code.  Please change the code to set the GPU number (0), increase the batch size to fill the GPU, and use a heavier network (resnet152). Does AMP improve performance? Does it allow you to increase batch size while training?
 
