@@ -37,25 +37,38 @@ Now you wille extract 100 images from the file using the command `ffmpeg -i sher
 With this command, %04d tells ffmpeg to name the extracted images with the serices with a 4 digit pattern, extract0001.jpg, extract0002.jpg, etc. Other numbers may be used, e.g. to use 2 numbers, the pattern would be %02d.
 
 
-Review the images. How much did the scence change?
+Review the images. How much did the scence change?  
+>  The scene did not change very much in this case.
+
 Now we'll adjust the frames per second used with the -r option, in this case with 1 frame per second.
 `ffmpeg -i sherbrooke_video.avi -frames:v 100 -r 1 data/ffmepg/test2/extract%04d.jpg`
 
 
 What's different? What happens if you change r?
+> We have fewer images of the same scene. When we change r to 1, we get fewer frames per second.
+
 Finally, we'll extract all the images with the command `ffmpeg -i sherbrooke_video.avi data/ffmepg/test3/extract%04d.jpg`
 
 
 How long did it take?
+> This took much longer to extract all the images.
+
 How many images did you get?
+> We have 4000 images now.
+
 Which is the "best" approach?
+> The best approach would be to set the frame rate of `-r 1` and extract all the images.
 
 ### Part 1b. Videos from a moving camera
 Download a sample [video dataset](https://w251lab08.s3.us-west-1.amazonaws.com/videos.tar) captured from one of the four user-accessible cameras (the front camera) of Dima's Tesla. A few questions to consider:
 * What is the key difference between stationary and moving camera captures?
+    > With a stationary camera , you only have to consider motion of the captured object. With a moving camera, you have to consider motion of both the camera and the captured object.
 * What is the resolution?
+    > The resolution is 1280 × 960. Using the QuickTime's Movie Inspector.
 * What is the frame rate?
+    > The frame rate is 36.03 fps.
 * In the light of the previous exercise, what is a good way to extract frames from such a video?
+    > `ffmpeg -i videos.avi -r 1 data/ffmepg/test4/extract%04d.jpg`
 
 ### Part 2. Yolo v5 tutorial
 Of the many object detectors, Yolo v5 continues to dominate. Take a look at the [PyTorch object detection models](https://pytorch.org/vision/stable/models.html#object-detection-instance-segmentation-and-person-keypoint-detection) and then glance through [Yolov5 documentation](https://github.com/ultralytics/yolov5)
@@ -64,19 +77,28 @@ Open up the [Yolo v5 Colab notebook](https://colab.research.google.com/github/ul
 
 Questions:
 * How many files are in the dataset?
+    > 
 * How many annotations?
+    > 
 * How many classes?
+    > 
 * How long does it take to train?
+    >
 * What is MAP?
+    > Mean average precision (MAP) is a metric for evaluating object detection ML problems that take into consideration bounding box confidence. The metric calculates the average precision for each class individually across all of the IoU (intersection over union) thresholds. The metric then averages the mAP for all classes.
 * Was transfer learning used in training?
+    > Transfer learning was used in training because we are using the YOLOv5 model to learn new data. 
 * Are you able to see your experiments on wandb?
+    > 
 * What is the MAP of [Nvidia's SSD300](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Detection/SSD) recipe?
 
 
 ### Part 3. Training Yolo v5 on custom data
 In this section, we will be following the [Roboflow Yolo v5 fine tuning guide](https://colab.research.google.com/drive/1gDZ2xcTOgR39tGGs-EZ6i3RTs16wmzZQ).  In order to complete this notebook, you will need to log into Roboflow / create an account, so that you are able to download the [BCCD dataset](https://public.roboflow.com/object-detection/bccd). Please follow the guide; training should take 6-10 minutes.  Questions:
 * How many classes are in this dataset?
+    > 3
 * How many samples?
+    > 6 files total comprising test (36)/train (765)/valid (73) image data, 2 READMEs, and a data.yaml file.
 * Do you get better results with the raw or augmented dataset?
 
 ### Part 4. Image annotation
@@ -84,4 +106,6 @@ The landscape of image annotators continues to suffer from fragmentation, with s
 
 Questions:
 * How long does it take you to annotate 10-20 images?
+    > Too long
 * How long would it take to annotate enough images for a reasonable training of Yolo v5?
+    > Forever
