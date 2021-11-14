@@ -4,6 +4,10 @@ ssh jane@192.168.1.180
 # find Jetson Nano IP address
 ifconfig eth0
 
+# start up camera
+export DISPLAY=:0
+xhost +
+
 # provision an instance with spot pricing
 aws ec2 run-instances --image-id ami-0010d386b82bc06f0 --instance-type t2.micro --security-group-ids sg-064cbb402c9f4c508 --associate-public-ip-address --instance-market-options file://spot-options.json --key-name w251 --profile mids
 
