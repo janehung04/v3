@@ -15,6 +15,8 @@ Objectively speaking, the average output of the discriminator for the all real b
 
 2. In your own words, how does the Discriminator improve its ability to detect fakes?
 
+The Discriminator improves its ability to detect fakes by being fed both real and fake images and minimizing a trainable loss function that identifies whether the given image is real or fake. Through backpropagation, the Discriminator tells the Generator how to tweak each pixel so the image will be more realistic. As the Generator gets better, the Discriminator should theoretically also improve its ability to detect fakes.
 
-3. Share a copy of the outpt image from the last step in the notebook (can be an upload to the ISVC Portal, or a link to the file in AWS Object Store).
+3. Share a copy of the outpt image from the last step in the notebook (can be an upload to the ISVC Portal, or a link to the file in AWS Object Store).  
+  
 Attached above.
