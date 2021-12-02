@@ -10,10 +10,14 @@ docker pull nvcr.io/nvidia/tritonserver:21.11-py3-sdk (client)
 docker pull nvcr.io/nvidia/tritonserver:21.11-py3 (server)
 ```
 A few quick questions:
-* is your server using the GPU?
+* is your server using the GPU?  
+  *  Yes
 * Can you change the number of classes for scoring in the example?
+  *  Yes
 * Which model is being used for inference? Can you change it to a different model?
+  *  densenet_onnx
 * Can you get the metrics for your server?
+  *  Yes
 
 ### RAPIDS primer
 RAPIDS is an open source project that targets to bring GPU acceleration to typical data science tasks.  Please refer to the async materials for more information on the project or visit [The RAPIDS homepage](https://rapids.ai/)
